@@ -3,7 +3,7 @@ import { asset } from "@/lib/asset";
 
 function TagPill({ tag }: { tag: string }) {
   return (
-    <span className="absolute right-3 top-3 z-20 rounded-full border border-border bg-white px-2 py-1 text-[9px] text-foreground">
+    <span className="absolute right-3 top-3 z-20 rounded-full border border-border bg-white px-2 py-1 text-[9px] leading-[16px] text-foreground">
       {tag}
     </span>
   );
