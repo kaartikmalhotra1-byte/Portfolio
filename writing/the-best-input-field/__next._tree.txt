@@ -1,7 +1,7 @@
-:HL["/Portfolio/_next/static/chunks/3jgms96xiel9g.css","style"]
+:HL["/Portfolio/_next/static/chunks/41xfrq-t8x3ls.css","style"]
 :HL["/Portfolio/_next/static/media/408869cf0d25d9f9-s.p.2svk7cnw5x6df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Portfolio/images/nav-underline.svg","image"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"the-best-input-field","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"writing","h":96,"c":"$Q2"}]]
-0:{"b":"qjSgeJtpayDuWFO_dbTy9","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"2s3WuB7STC9vxcoCjyIvr","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
