@@ -29,6 +29,35 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+/*
+ * Squircle corner-shape renders its curve tighter than a plain
+ * circular border-radius of the same value (measured: an 8px circle
+ * looks like a 14px squircle, a 24px circle like a 38px squircle).
+ * Browsers without corner-shape support (Safari) ignore the property
+ * and render the literal radius as a plain circle, so the bumped
+ * values would look oversized there — @supports keeps them scoped to
+ * browsers that actually apply the squircle curve.
+ */
+.squircle-cta {
+  border-radius: 8px;
+}
+
+.squircle-tile {
+  border-radius: 24px;
+}
+
+@supports (corner-shape: squircle) {
+  .squircle-cta {
+    border-radius: 14px;
+    corner-shape: squircle;
+  }
+
+  .squircle-tile {
+    border-radius: 38px;
+    corner-shape: squircle;
+  }
+}
+
 .wrapper {
   /* content-box so max-width is the actual content width (880px,
      matching Figma's content column exactly) and padding adds

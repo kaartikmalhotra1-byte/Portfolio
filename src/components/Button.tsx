@@ -10,7 +10,7 @@ export function Button({ label, variant = "primary", iconOnly = false }: ButtonP
   const isPrimary = variant === "primary";
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-[14px] px-3 py-2 text-sm [corner-shape:squircle] ${
+      className={`squircle-cta inline-flex items-center gap-1 px-3 py-2 text-sm ${
         isPrimary ? "bg-foreground text-white" : "bg-surface-secondary text-foreground"
       }`}
     >

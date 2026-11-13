@@ -30,7 +30,7 @@ export function CaseStudyMedia({
 }) {
   return (
     <div
-      className="relative w-full overflow-hidden rounded-[38px] bg-surface-secondary [corner-shape:squircle]"
+      className="squircle-tile relative w-full overflow-hidden bg-surface-secondary"
       style={{ aspectRatio: backdropAspect }}
     >
       {caseStudy.background ? (
