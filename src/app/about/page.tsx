@@ -30,7 +30,7 @@ export default function AboutPage() {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-4 animate-expressive-fade-slow">
           <h1 className="text-[28px] font-semibold text-foreground">About me</h1>
-          <div className="prose-body max-w-2xl text-base">
+          <div className="prose-body max-w-[46.2rem] text-base">
             <p>
               I&apos;m working as Lead Product Designer at Monotype. I lead design for how our
               fonts reach designers, across a desktop app, an Adobe plugin, a Chrome extension and
