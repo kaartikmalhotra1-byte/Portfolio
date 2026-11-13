@@ -80,14 +80,14 @@ export default function Home() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col">
           <h2
             className="text-[23px] font-semibold text-foreground animate-expressive-fade"
             style={{ "--stagger": "140ms" } as React.CSSProperties}
           >
             Selected work
           </h2>
-          <div className="flex flex-col gap-10">
+          <div className="mt-6 flex flex-col gap-10">
             {homeFeatured.map((cs, i) => (
               <div
                 key={cs.slug}
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
           <Link
             href="/case-studies"
-            className="mx-auto w-fit animate-expressive-fade"
+            className="mx-auto mt-10 w-fit animate-expressive-fade"
             style={{ "--stagger": "340ms" } as React.CSSProperties}
           >
             <Button label="Read all case studies" variant="primary" />
