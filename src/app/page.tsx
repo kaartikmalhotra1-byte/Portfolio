@@ -41,7 +41,7 @@ export default function Home() {
             <img
               src={asset("/images/profile.png")}
               alt="Kaartik Malhotra"
-              className="h-[232px] w-[220px] rounded-2xl object-cover animate-expressive-in"
+              className="h-[232px] w-[220px] rounded-2xl object-cover object-top animate-expressive-in"
             />
             <div className="flex items-center gap-4 animate-expressive-fade">
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
@@ -95,7 +95,7 @@ export default function Home() {
                 style={{ "--stagger": `${180 + i * 80}ms` } as React.CSSProperties}
               >
                 <div className="w-full flex-shrink-0 sm:w-[428px]">
-                  <CaseStudyMedia caseStudy={cs} />
+                  <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">
                   <h3 className="text-[19px] font-semibold text-foreground">{cs.title}</h3>

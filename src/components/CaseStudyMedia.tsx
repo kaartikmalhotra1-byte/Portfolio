@@ -9,11 +9,19 @@ function TagPill({ tag }: { tag: string }) {
   );
 }
 
-function Backdrop({ caseStudy, children }: { caseStudy: CaseStudy; children?: React.ReactNode }) {
+function Backdrop({
+  caseStudy,
+  aspect,
+  children,
+}: {
+  caseStudy: CaseStudy;
+  aspect: string;
+  children?: React.ReactNode;
+}) {
   return (
     <div
       className="absolute inset-x-0 top-0 overflow-hidden rounded-3xl bg-surface-secondary"
-      style={{ aspectRatio: "428 / 304" }}
+      style={{ aspectRatio: aspect }}
     >
       {caseStudy.background ? (
         // eslint-disable-next-line @next/next/no-img-element
@@ -29,11 +37,23 @@ function Backdrop({ caseStudy, children }: { caseStudy: CaseStudy; children?: Re
   );
 }
 
-export function CaseStudyMedia({ caseStudy }: { caseStudy: CaseStudy }) {
+/**
+ * `backdropAspect` matches Figma exactly: the Home page's featured
+ * cards use a 428/272 backdrop, while the Case studies index grid
+ * uses 428/304 for the same images — two real, different values in
+ * the source file, not one shared ratio.
+ */
+export function CaseStudyMedia({
+  caseStudy,
+  backdropAspect = "428 / 304",
+}: {
+  caseStudy: CaseStudy;
+  backdropAspect?: string;
+}) {
   if (caseStudy.mediaStyle === "overflow-phone" && caseStudy.cover?.src) {
     return (
       <div className="relative w-full">
-        <Backdrop caseStudy={caseStudy} />
+        <Backdrop caseStudy={caseStudy} aspect={backdropAspect} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset(caseStudy.cover.src)}
@@ -46,8 +66,8 @@ export function CaseStudyMedia({ caseStudy }: { caseStudy: CaseStudy }) {
 
   if (caseStudy.mediaStyle === "contained" && caseStudy.cover?.src) {
     return (
-      <div className="relative w-full" style={{ aspectRatio: "428 / 304" }}>
-        <Backdrop caseStudy={caseStudy}>
+      <div className="relative w-full" style={{ aspectRatio: backdropAspect }}>
+        <Backdrop caseStudy={caseStudy} aspect={backdropAspect}>
           <div className="absolute inset-0 flex items-center justify-center p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -62,8 +82,8 @@ export function CaseStudyMedia({ caseStudy }: { caseStudy: CaseStudy }) {
   }
 
   return (
-    <div className="relative w-full" style={{ aspectRatio: "428 / 304" }}>
-      <Backdrop caseStudy={caseStudy} />
+    <div className="relative w-full" style={{ aspectRatio: backdropAspect }}>
+      <Backdrop caseStudy={caseStudy} aspect={backdropAspect} />
     </div>
   );
 }
