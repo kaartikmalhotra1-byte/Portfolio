@@ -20,7 +20,8 @@ export type CaseStudy = {
   company: string;
   status?: string;
   cover?: MediaItem;
-  mediaStyle: "overflow-phone" | "contained" | "none";
+  mediaStyle: "overflow-phone" | "none";
+  coverWidth?: string;
   coverFramed?: boolean;
   background?: string;
   sections: ContentSection[];

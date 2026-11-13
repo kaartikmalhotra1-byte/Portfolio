@@ -49,22 +49,11 @@ export function CaseStudyMedia({
         <img
           src={asset(caseStudy.cover.src)}
           alt={caseStudy.cover.alt ?? ""}
-          className={`absolute left-1/2 z-10 w-[56%] -translate-x-1/2 ${
+          className={`absolute left-1/2 z-10 -translate-x-1/2 ${
             caseStudy.coverFramed ? "rounded-t-2xl border border-black" : ""
           }`}
-          style={{ top: coverTopOffset }}
+          style={{ top: coverTopOffset, width: caseStudy.coverWidth ?? "56%" }}
         />
-      ) : null}
-
-      {caseStudy.mediaStyle === "contained" && caseStudy.cover?.src ? (
-        <div className="absolute inset-0 z-10 flex items-center justify-center p-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(caseStudy.cover.src)}
-            alt={caseStudy.cover.alt ?? ""}
-            className="max-h-full max-w-full rounded-lg object-contain"
-          />
-        </div>
       ) : null}
     </div>
   );
