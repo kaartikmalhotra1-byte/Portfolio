@@ -16,7 +16,7 @@ export default function WritingPage() {
       <NavRow active="writing" />
 
       <div className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 animate-expressive-fade-slow">
           <h1 className="text-[28px] font-semibold text-foreground">
             Writing on products, design &amp; AI.
           </h1>
@@ -28,7 +28,10 @@ export default function WritingPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-8">
+        <div
+          className="flex flex-col gap-8 animate-expressive-fade-slow"
+          style={{ "--stagger": "70ms" } as React.CSSProperties}
+        >
           {writingPosts.map((post) => (
             <Link
               key={post.slug}
@@ -46,7 +49,9 @@ export default function WritingPage() {
 
         <Divider />
 
-        <PageFooter />
+        <div className="animate-expressive-fade-slow" style={{ "--stagger": "140ms" } as React.CSSProperties}>
+          <PageFooter />
+        </div>
       </div>
     </div>
   );

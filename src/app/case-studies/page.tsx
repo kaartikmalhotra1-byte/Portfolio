@@ -15,7 +15,7 @@ export default function CaseStudiesPage() {
       <NavRow active="case-studies" />
 
       <div className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 animate-expressive-fade-slow">
           <h1 className="text-[28px] font-semibold text-foreground">Case studies</h1>
           <p className="text-base text-foreground-secondary">
             Designing for trust; between people and models, and in processes people can&apos;t see.
@@ -24,7 +24,10 @@ export default function CaseStudiesPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade-slow"
+          style={{ "--stagger": "70ms" } as React.CSSProperties}
+        >
           <div>
             <p className="font-medium text-foreground">Recent work</p>
             <p className="text-sm text-foreground-tertiary">at Monotype</p>
@@ -38,7 +41,10 @@ export default function CaseStudiesPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade-slow"
+          style={{ "--stagger": "140ms" } as React.CSSProperties}
+        >
           <div>
             <p className="font-medium text-foreground">Earlier work</p>
             <p className="text-sm text-foreground-tertiary">at Zomato &amp; Spinny</p>
@@ -52,7 +58,9 @@ export default function CaseStudiesPage() {
 
         <Divider />
 
-        <PageFooter />
+        <div className="animate-expressive-fade-slow" style={{ "--stagger": "210ms" } as React.CSSProperties}>
+          <PageFooter />
+        </div>
       </div>
     </div>
   );

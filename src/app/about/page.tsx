@@ -28,7 +28,7 @@ export default function AboutPage() {
       <NavRow active="about" />
 
       <div className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 animate-expressive-fade-slow">
           <h1 className="text-[28px] font-semibold text-foreground">About me</h1>
           <div className="prose-body max-w-2xl text-base">
             <p>
@@ -49,7 +49,10 @@ export default function AboutPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade-slow"
+          style={{ "--stagger": "70ms" } as React.CSSProperties}
+        >
           <h2 className="text-[28px] font-semibold text-foreground">Career</h2>
           <div className="flex max-w-2xl flex-col gap-4">
             {career.map((item, i) => (
@@ -65,7 +68,10 @@ export default function AboutPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade-slow"
+          style={{ "--stagger": "140ms" } as React.CSSProperties}
+        >
           <h2 className="text-[28px] font-semibold text-foreground">Education</h2>
           <div className="flex max-w-2xl flex-col gap-4">
             {education.map((item, i) => (
@@ -81,7 +87,10 @@ export default function AboutPage() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade-slow"
+          style={{ "--stagger": "210ms" } as React.CSSProperties}
+        >
           <h2 className="text-[28px] font-semibold text-foreground">Get in touch</h2>
           <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-foreground">
             <a href="mailto:kaartikmalhotra1@gmail.com">kaartikmalhotra1@gmail.com</a>
@@ -98,7 +107,9 @@ export default function AboutPage() {
 
         <Divider />
 
-        <PageFooter />
+        <div className="animate-expressive-fade-slow" style={{ "--stagger": "280ms" } as React.CSSProperties}>
+          <PageFooter />
+        </div>
       </div>
     </div>
   );

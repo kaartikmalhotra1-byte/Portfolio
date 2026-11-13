@@ -107,6 +107,26 @@ body {
   }
 }
 
+/*
+ * Same fade, slowed by 300ms (155ms -> 455ms) for Case studies,
+ * Writing, and About — same critically-damped curve shape, just
+ * stretched across a longer duration, per request rather than a
+ * physically "slower spring".
+ */
+.animate-expressive-fade-slow {
+  animation: expressive-fade-in 455ms linear(
+      0, 0.0737, 0.2231, 0.3844, 0.5299, 0.6502, 0.7446, 0.8163, 0.8694,
+      0.9081, 0.9358, 0.9554, 0.9693, 0.9789, 0.9856
+    ) both;
+  animation-delay: var(--stagger, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-expressive-fade-slow {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-expressive-in {
     animation: none;
