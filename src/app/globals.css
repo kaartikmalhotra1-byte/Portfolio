@@ -87,6 +87,26 @@ body {
     ) both;
 }
 
+/*
+ * Plain content fades — Expressive Effects Default spring only (no
+ * spatial scale, nothing here is resizing). `--stagger` lets callers
+ * offset entrance per section for a choreographed reveal instead of
+ * every block appearing at once.
+ */
+.animate-expressive-fade {
+  animation: expressive-fade-in 155ms linear(
+      0, 0.0737, 0.2231, 0.3844, 0.5299, 0.6502, 0.7446, 0.8163, 0.8694,
+      0.9081, 0.9358, 0.9554, 0.9693, 0.9789, 0.9856
+    ) both;
+  animation-delay: var(--stagger, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-expressive-fade {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-expressive-in {
     animation: none;

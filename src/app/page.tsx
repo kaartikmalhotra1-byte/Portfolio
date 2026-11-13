@@ -21,7 +21,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-10">
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
-          <div className="flex max-w-xl flex-col gap-6">
+          <div className="flex max-w-xl flex-col gap-6 animate-expressive-fade">
             <h1 className="text-[28px] font-semibold leading-tight text-foreground">
               I design products where humans and AI share the work.
             </h1>
@@ -43,7 +43,7 @@ export default function Home() {
               alt="Kaartik Malhotra"
               className="h-[232px] w-[220px] rounded-2xl object-cover animate-expressive-in"
             />
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 animate-expressive-fade">
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={asset("/images/linkedin.png")} alt="LinkedIn" className="size-6" />
@@ -58,7 +58,10 @@ export default function Home() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade"
+          style={{ "--stagger": "70ms" } as React.CSSProperties}
+        >
           <h2 className="text-[23px] font-semibold text-foreground">Highlights</h2>
           <div className="flex flex-wrap gap-3">
             {highlights.map((item) => (
@@ -74,7 +77,10 @@ export default function Home() {
 
         <Divider />
 
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 animate-expressive-fade"
+          style={{ "--stagger": "140ms" } as React.CSSProperties}
+        >
           <h2 className="text-[23px] font-semibold text-foreground">Selected work</h2>
           <div className="flex flex-col gap-10">
             {homeFeatured.map((cs) => (
@@ -102,7 +108,9 @@ export default function Home() {
 
         <Divider />
 
-        <PageFooter />
+        <div className="animate-expressive-fade" style={{ "--stagger": "210ms" } as React.CSSProperties}>
+          <PageFooter />
+        </div>
       </div>
     </div>
   );
