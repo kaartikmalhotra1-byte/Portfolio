@@ -4,4 +4,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"ai-belongs-in-the-canvas","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"writing","h":96,"c":"$Q2"}]]
-0:{"b":"beKQUwcvZbd5Q9OfknSYS","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"zwFa3eA171sFZPlCQa4S-","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
