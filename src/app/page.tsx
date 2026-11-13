@@ -58,16 +58,19 @@ export default function Home() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade"
-          style={{ "--stagger": "70ms" } as React.CSSProperties}
-        >
-          <h2 className="text-[23px] font-semibold text-foreground">Highlights</h2>
+        <div className="flex flex-col gap-6">
+          <h2
+            className="text-[23px] font-semibold text-foreground animate-expressive-fade"
+            style={{ "--stagger": "70ms" } as React.CSSProperties}
+          >
+            Highlights
+          </h2>
           <div className="flex flex-wrap gap-3">
-            {highlights.map((item) => (
+            {highlights.map((item, i) => (
               <span
                 key={item}
-                className="rounded-full bg-surface-secondary px-3 py-2 text-sm text-foreground"
+                className="rounded-full bg-surface-secondary px-3 py-2 text-sm text-foreground animate-expressive-fade"
+                style={{ "--stagger": `${110 + i * 40}ms` } as React.CSSProperties}
               >
                 {item}
               </span>
@@ -77,14 +80,20 @@ export default function Home() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade"
-          style={{ "--stagger": "140ms" } as React.CSSProperties}
-        >
-          <h2 className="text-[23px] font-semibold text-foreground">Selected work</h2>
+        <div className="flex flex-col gap-6">
+          <h2
+            className="text-[23px] font-semibold text-foreground animate-expressive-fade"
+            style={{ "--stagger": "140ms" } as React.CSSProperties}
+          >
+            Selected work
+          </h2>
           <div className="flex flex-col gap-10">
-            {homeFeatured.map((cs) => (
-              <div key={cs.slug} className="flex flex-col items-center gap-10 sm:flex-row">
+            {homeFeatured.map((cs, i) => (
+              <div
+                key={cs.slug}
+                className="flex flex-col items-center gap-10 sm:flex-row animate-expressive-fade"
+                style={{ "--stagger": `${180 + i * 80}ms` } as React.CSSProperties}
+              >
                 <div className="w-full flex-shrink-0 sm:w-[428px]">
                   <CaseStudyMedia caseStudy={cs} />
                 </div>
@@ -101,7 +110,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <Link href="/case-studies" className="mx-auto w-fit">
+          <Link
+            href="/case-studies"
+            className="mx-auto w-fit animate-expressive-fade"
+            style={{ "--stagger": "340ms" } as React.CSSProperties}
+          >
             <Button label="Read all case studies" variant="primary" />
           </Link>
         </div>

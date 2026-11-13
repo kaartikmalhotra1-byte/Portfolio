@@ -49,14 +49,20 @@ export default function AboutPage() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade-slow"
-          style={{ "--stagger": "70ms" } as React.CSSProperties}
-        >
-          <h2 className="text-[28px] font-semibold text-foreground">Career</h2>
+        <div className="flex flex-col gap-6">
+          <h2
+            className="text-[28px] font-semibold text-foreground animate-expressive-fade-slow"
+            style={{ "--stagger": "70ms" } as React.CSSProperties}
+          >
+            Career
+          </h2>
           <div className="flex max-w-2xl flex-col gap-4">
             {career.map((item, i) => (
-              <div key={i}>
+              <div
+                key={i}
+                className="animate-expressive-fade-slow"
+                style={{ "--stagger": `${120 + i * 40}ms` } as React.CSSProperties}
+              >
                 <p className="font-semibold text-foreground">{item.company}</p>
                 <p className="text-sm text-foreground-tertiary">
                   {item.role} / {item.dates}
@@ -68,14 +74,20 @@ export default function AboutPage() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade-slow"
-          style={{ "--stagger": "140ms" } as React.CSSProperties}
-        >
-          <h2 className="text-[28px] font-semibold text-foreground">Education</h2>
+        <div className="flex flex-col gap-6">
+          <h2
+            className="text-[28px] font-semibold text-foreground animate-expressive-fade-slow"
+            style={{ "--stagger": "140ms" } as React.CSSProperties}
+          >
+            Education
+          </h2>
           <div className="flex max-w-2xl flex-col gap-4">
             {education.map((item, i) => (
-              <div key={i}>
+              <div
+                key={i}
+                className="animate-expressive-fade-slow"
+                style={{ "--stagger": `${190 + i * 40}ms` } as React.CSSProperties}
+              >
                 <p className="font-semibold text-foreground">{item.program}</p>
                 <p className="text-sm text-foreground-tertiary">
                   {item.school} / {item.dates}

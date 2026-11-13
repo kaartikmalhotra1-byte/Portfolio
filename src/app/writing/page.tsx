@@ -28,15 +28,13 @@ export default function WritingPage() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-8 animate-expressive-fade-slow"
-          style={{ "--stagger": "70ms" } as React.CSSProperties}
-        >
-          {writingPosts.map((post) => (
+        <div className="flex flex-col gap-8">
+          {writingPosts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="flex w-full items-center gap-3"
+              className="flex w-full items-center gap-3 animate-expressive-fade-slow"
+              style={{ "--stagger": `${70 + i * 25}ms` } as React.CSSProperties}
             >
               <div className="min-w-0 flex-1">
                 <p className="text-base text-foreground">{post.title}</p>

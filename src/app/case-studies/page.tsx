@@ -24,34 +24,44 @@ export default function CaseStudiesPage() {
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade-slow"
-          style={{ "--stagger": "70ms" } as React.CSSProperties}
-        >
-          <div>
+        <div className="flex flex-col gap-6">
+          <div
+            className="animate-expressive-fade-slow"
+            style={{ "--stagger": "70ms" } as React.CSSProperties}
+          >
             <p className="font-medium text-foreground">Recent work</p>
             <p className="text-sm text-foreground-tertiary">at Monotype</p>
           </div>
           <div className="flex flex-wrap gap-6">
-            {recentWork.map((cs) => (
-              <CaseStudyGridCard key={cs.slug} caseStudy={cs} />
+            {recentWork.map((cs, i) => (
+              <CaseStudyGridCard
+                key={cs.slug}
+                caseStudy={cs}
+                className="animate-expressive-fade-slow"
+                style={{ "--stagger": `${120 + i * 50}ms` } as React.CSSProperties}
+              />
             ))}
           </div>
         </div>
 
         <Divider />
 
-        <div
-          className="flex flex-col gap-6 animate-expressive-fade-slow"
-          style={{ "--stagger": "140ms" } as React.CSSProperties}
-        >
-          <div>
+        <div className="flex flex-col gap-6">
+          <div
+            className="animate-expressive-fade-slow"
+            style={{ "--stagger": "140ms" } as React.CSSProperties}
+          >
             <p className="font-medium text-foreground">Earlier work</p>
             <p className="text-sm text-foreground-tertiary">at Zomato &amp; Spinny</p>
           </div>
           <div className="flex flex-wrap gap-6">
-            {earlierWork.map((cs) => (
-              <CaseStudyGridCard key={cs.slug} caseStudy={cs} />
+            {earlierWork.map((cs, i) => (
+              <CaseStudyGridCard
+                key={cs.slug}
+                caseStudy={cs}
+                className="animate-expressive-fade-slow"
+                style={{ "--stagger": `${190 + i * 50}ms` } as React.CSSProperties}
+              />
             ))}
           </div>
         </div>
