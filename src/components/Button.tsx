@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 type ButtonProps = {
   label: string;
   variant?: "primary" | "secondary";
@@ -15,7 +17,7 @@ export function Button({ label, variant = "primary", iconOnly = false }: ButtonP
       {!iconOnly ? <span>{label}</span> : null}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={isPrimary ? "/images/arrow-white.svg" : "/images/arrow-dark.svg"}
+        src={asset(isPrimary ? "/images/arrow-white.svg" : "/images/arrow-dark.svg")}
         alt=""
         aria-hidden
         className="size-4"

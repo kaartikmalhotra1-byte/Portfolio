@@ -5,6 +5,7 @@ import { PageFooter } from "@/components/PageFooter";
 import { Button } from "@/components/Button";
 import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 import { homeFeatured } from "@/content/case-studies";
+import { asset } from "@/lib/asset";
 
 const highlights = [
   "Formulated Monotype's AI-native product strategy",
@@ -38,18 +39,18 @@ export default function Home() {
           <div className="flex flex-shrink-0 flex-col items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/profile.png"
+              src={asset("/images/profile.png")}
               alt="Kaartik Malhotra"
               className="h-[232px] w-[220px] rounded-2xl object-cover"
             />
             <div className="flex items-center gap-4">
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/linkedin.png" alt="LinkedIn" className="size-6" />
+                <img src={asset("/images/linkedin.png")} alt="LinkedIn" className="size-6" />
               </a>
               <a href="mailto:kaartikmalhotra1@gmail.com">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/envelope.png" alt="Email" className="size-6" />
+                <img src={asset("/images/envelope.png")} alt="Email" className="size-6" />
               </a>
             </div>
           </div>

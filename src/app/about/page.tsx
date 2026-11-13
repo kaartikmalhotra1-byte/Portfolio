@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NavRow } from "@/components/NavRow";
 import { Divider } from "@/components/Divider";
 import { PageFooter } from "@/components/PageFooter";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "About — Kaartik Malhotra",
@@ -89,7 +90,7 @@ export default function AboutPage() {
               LinkedIn
             </a>
             <span className="size-1 rounded-full bg-border" />
-            <a href="/resume.pdf" className="underline">
+            <a href={asset("/resume.pdf")} className="underline">
               Download my CV
             </a>
           </div>

@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const isGhPages = process.env.DEPLOY_TARGET === "gh-pages";
+const repoName = "Portfolio";
+
 const nextConfig: NextConfig = {
   /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  ...(isGhPages ? {} : { cacheComponents: true, partialPrefetching: true }),
   turbopack: {
     rules: {
       "*.css": {
@@ -12,6 +14,13 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  ...(isGhPages
+    ? {
+        output: "export",
+        basePath: `/${repoName}`,
+        assetPrefix: `/${repoName}/`,
+      }
+    : {}),
 };
 
 export default nextConfig;

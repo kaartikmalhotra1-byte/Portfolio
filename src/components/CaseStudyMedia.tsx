@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/content/types";
+import { asset } from "@/lib/asset";
 
 function TagPill({ tag }: { tag: string }) {
   return (
@@ -17,7 +18,7 @@ function Backdrop({ caseStudy, children }: { caseStudy: CaseStudy; children?: Re
       {caseStudy.background ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={caseStudy.background}
+          src={asset(caseStudy.background)}
           alt=""
           className="h-full w-full object-cover opacity-80"
         />
@@ -35,7 +36,7 @@ export function CaseStudyMedia({ caseStudy }: { caseStudy: CaseStudy }) {
         <Backdrop caseStudy={caseStudy} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={caseStudy.cover.src}
+          src={asset(caseStudy.cover.src)}
           alt={caseStudy.cover.alt ?? ""}
           className="relative z-10 mx-auto block w-[56%]"
         />
@@ -50,7 +51,7 @@ export function CaseStudyMedia({ caseStudy }: { caseStudy: CaseStudy }) {
           <div className="absolute inset-0 flex items-center justify-center p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={caseStudy.cover.src}
+              src={asset(caseStudy.cover.src)}
               alt={caseStudy.cover.alt ?? ""}
               className="max-h-full max-w-full rounded-lg object-contain"
             />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 type NavKey = "case-studies" | "writing" | "about";
 
@@ -34,7 +35,7 @@ export function NavRow({ active }: { active?: NavKey }) {
               {isActive ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src="/images/nav-underline.svg"
+                  src={asset("/images/nav-underline.svg")}
                   alt=""
                   aria-hidden
                   className="absolute left-0 top-full h-[5px] w-full"
