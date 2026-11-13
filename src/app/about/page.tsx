@@ -1,68 +1,104 @@
 import type { Metadata } from "next";
-import { MediaBlock } from "@/components/MediaBlock";
+import { NavRow } from "@/components/NavRow";
+import { Divider } from "@/components/Divider";
+import { PageFooter } from "@/components/PageFooter";
 
 export const metadata: Metadata = {
-  title: "About — Your Name",
+  title: "About — Kaartik Malhotra",
 };
+
+const career = [
+  { company: "Monotype", role: "Lead Product Designer (Prev. Senior PD)", dates: "Mar 2025 - Present" },
+  { company: "Zomato", role: "Senior Product Designer", dates: "Jan 2025 - Mar 2025" },
+  { company: "Monotype", role: "Senior Product Designer", dates: "Oct 2024 - Jan 2025" },
+  { company: "Spinny", role: "Senior Product Designer (Prev. PD - II)", dates: "Apr 2022 - Oct 2024" },
+  { company: "DotPe", role: "UI/UX Designer", dates: "Oct 2021 - Apr 2022" },
+  { company: "TOPPEQ", role: "Founding UI/UX Designer", dates: "Sep 2019 - Oct 2021" },
+];
+
+const education = [
+  { school: "Stanford Graduate School of Business", program: "Executive Program, LEAD", dates: "2026 - 2027" },
+  { school: "Vellore Institute of Technology", program: "B. Tech. in Computer Science", dates: "2016 - 2020" },
+];
 
 export default function AboutPage() {
   return (
-    <section className="wrapper py-20">
-      <div className="grid gap-12 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-        <div>
-          <MediaBlock
-            item={{ kind: "image", alt: "Portrait placeholder" }}
-            aspect="aspect-square"
-          />
-          <a
-            href="/resume.pdf"
-            className="mt-6 inline-block rounded-full border border-foreground/15 px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/5"
-          >
-            Download résumé
-          </a>
+    <div className="wrapper flex flex-col gap-16 py-14">
+      <NavRow active="about" />
+
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-[28px] font-semibold text-foreground">About me</h1>
+          <div className="prose-body max-w-2xl text-base">
+            <p>
+              I&apos;m working as Lead Product Designer at Monotype. I lead design for how our
+              fonts reach designers, across a desktop app, an Adobe plugin, a Chrome extension and
+              an agentic taskbar, and the licensing systems behind them.
+            </p>
+            <p className="mt-4">
+              I studied computer science, then spent my early years designing tools that came down
+              to one problem: making processes people can&apos;t see trustworthy.
+            </p>
+            <p className="mt-4">
+              I work on the same problem now, with a model in the loop. I care about where a model
+              should act, where it should stay out, and how it tells you when it&apos;s unsure.
+            </p>
+          </div>
         </div>
 
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">About</h1>
-          <p className="prose-body mt-6">
-            Replace this with your real bio: background, what you focus on
-            as a designer, and what drives your work.
-          </p>
-          <p className="prose-body mt-4">
-            Add a second paragraph with more detail — companies, notable
-            projects, or a point of view on design.
-          </p>
+        <Divider />
 
-          <h2 className="mt-12 text-lg font-semibold tracking-tight">
-            Experience
-          </h2>
-          <ul className="prose-body mt-4 space-y-4">
-            <li>
-              <p className="font-medium text-foreground">
-                [Role] — [Company]
-              </p>
-              <p className="text-sm text-foreground/50">[Dates]</p>
-              <p className="mt-1">[One line on what you did/shipped.]</p>
-            </li>
-            <li>
-              <p className="font-medium text-foreground">
-                [Role] — [Company]
-              </p>
-              <p className="text-sm text-foreground/50">[Dates]</p>
-              <p className="mt-1">[One line on what you did/shipped.]</p>
-            </li>
-          </ul>
+        <div className="flex flex-col gap-6">
+          <h2 className="text-[28px] font-semibold text-foreground">Career</h2>
+          <div className="flex max-w-2xl flex-col gap-4">
+            {career.map((item, i) => (
+              <div key={i}>
+                <p className="font-semibold text-foreground">{item.company}</p>
+                <p className="text-sm text-foreground-tertiary">
+                  {item.role} / {item.dates}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          <h2 className="mt-12 text-lg font-semibold tracking-tight">
-            Contact
-          </h2>
-          <p className="prose-body mt-4">
-            <a href="mailto:hello@example.com" className="text-foreground underline">
-              hello@example.com
+        <Divider />
+
+        <div className="flex flex-col gap-6">
+          <h2 className="text-[28px] font-semibold text-foreground">Education</h2>
+          <div className="flex max-w-2xl flex-col gap-4">
+            {education.map((item, i) => (
+              <div key={i}>
+                <p className="font-semibold text-foreground">{item.program}</p>
+                <p className="text-sm text-foreground-tertiary">
+                  {item.school} / {item.dates}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col gap-6">
+          <h2 className="text-[28px] font-semibold text-foreground">Get in touch</h2>
+          <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-foreground">
+            <a href="mailto:kaartikmalhotra1@gmail.com">kaartikmalhotra1@gmail.com</a>
+            <span className="size-1 rounded-full bg-border" />
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="underline">
+              LinkedIn
             </a>
-          </p>
+            <span className="size-1 rounded-full bg-border" />
+            <a href="/resume.pdf" className="underline">
+              Download my CV
+            </a>
+          </div>
         </div>
+
+        <Divider />
+
+        <PageFooter />
       </div>
-    </section>
+    </div>
   );
 }

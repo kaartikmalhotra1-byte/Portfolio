@@ -1,36 +1,59 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { caseStudies } from "@/content/case-studies";
-import { MediaBlock } from "@/components/MediaBlock";
+import { NavRow } from "@/components/NavRow";
+import { Divider } from "@/components/Divider";
+import { PageFooter } from "@/components/PageFooter";
+import { CaseStudyGridCard } from "@/components/CaseStudyGridCard";
+import { recentWork, earlierWork } from "@/content/case-studies";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Your Name",
+  title: "Case studies — Kaartik Malhotra",
 };
 
 export default function CaseStudiesPage() {
   return (
-    <section className="wrapper py-20">
-      <h1 className="text-3xl font-semibold tracking-tight">Case Studies</h1>
-      <p className="mt-3 max-w-xl text-foreground/60">
-        Selected projects, process, and outcomes.
-      </p>
+    <div className="wrapper flex flex-col gap-16 py-14">
+      <NavRow active="case-studies" />
 
-      <div className="mt-12 grid gap-12 sm:grid-cols-2">
-        {caseStudies.map((cs) => (
-          <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="group">
-            {cs.cover ? <MediaBlock item={cs.cover} aspect="aspect-[4/3]" /> : null}
-            <div className="mt-4 flex items-baseline justify-between gap-4">
-              <h2 className="font-medium transition-colors group-hover:text-foreground/70">
-                {cs.title}
-              </h2>
-              {cs.year ? (
-                <span className="text-sm text-foreground/40">{cs.year}</span>
-              ) : null}
-            </div>
-            <p className="mt-1 text-sm text-foreground/50">{cs.summary}</p>
-          </Link>
-        ))}
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-[28px] font-semibold text-foreground">Case studies</h1>
+          <p className="text-base text-foreground-secondary">
+            Designing for trust; between people and models, and in processes people can&apos;t see.
+          </p>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col gap-6">
+          <div>
+            <p className="font-medium text-foreground">Recent work</p>
+            <p className="text-sm text-foreground-tertiary">at Monotype</p>
+          </div>
+          <div className="flex flex-wrap gap-6">
+            {recentWork.map((cs) => (
+              <CaseStudyGridCard key={cs.slug} caseStudy={cs} />
+            ))}
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col gap-6">
+          <div>
+            <p className="font-medium text-foreground">Earlier work</p>
+            <p className="text-sm text-foreground-tertiary">at Zomato &amp; Spinny</p>
+          </div>
+          <div className="flex flex-wrap gap-6">
+            {earlierWork.map((cs) => (
+              <CaseStudyGridCard key={cs.slug} caseStudy={cs} />
+            ))}
+          </div>
+        </div>
+
+        <Divider />
+
+        <PageFooter />
       </div>
-    </section>
+    </div>
   );
 }

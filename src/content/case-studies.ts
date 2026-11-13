@@ -1,59 +1,111 @@
 import type { CaseStudy } from "./types";
 
-/**
- * PLACEHOLDER DATA.
- * Replace each entry below with a real case study: swap `summary`,
- * `sections[].body`, and add real `src` paths to `cover`/`media` once
- * assets are in `public/case-studies/<slug>/`. Keep the shape the same
- * and the pages will render automatically.
- */
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "case-study-one",
-    title: "Case Study One",
-    summary: "One-line summary of the problem and the outcome goes here.",
-    role: "Product Designer",
-    year: "2026",
-    tags: ["Placeholder"],
-    cover: { kind: "image", alt: "Cover image placeholder" },
-    sections: [
-      {
-        heading: "Overview",
-        body: "Replace with the real context: the problem, the team, your role, and the constraints.",
-      },
-      {
-        heading: "Process",
-        body: "Replace with research, iterations, and key decisions.",
-        media: [{ kind: "image", alt: "Process media placeholder" }],
-      },
-      {
-        heading: "Outcome",
-        body: "Replace with the measurable or qualitative result.",
-      },
-    ],
+    slug: "brand-type-fidelity",
+    title: "Brand Type Fidelity",
+    tagline: "Catching breaches on the canvas, not the printed proof",
+    summary:
+      "A global publisher found the wrong typeface only on a printed draft: 90+ hours of rework and a reprint. I designed a check that runs as designers work in Adobe. Rules and a classifier handle the clear cases, and a language model handles only the ambiguous ones, saying so when it's unsure.",
+    tag: "HAI",
+    company: "Monotype",
+    status: "In development",
+    cover: { kind: "image", src: "/images/mock-brand-type-fidelity.png", alt: "Brand Type Fidelity product screen" },
+    mediaStyle: "overflow-phone",
+    background: "/images/bg-purple.png",
+    sections: [],
   },
   {
-    slug: "case-study-two",
-    title: "Case Study Two",
-    summary: "One-line summary of the problem and the outcome goes here.",
-    role: "Product Designer",
-    year: "2026",
-    tags: ["Placeholder"],
-    cover: { kind: "image", alt: "Cover image placeholder" },
-    sections: [
-      {
-        heading: "Overview",
-        body: "Replace with the real context: the problem, the team, your role, and the constraints.",
-      },
-      {
-        heading: "Process",
-        body: "Replace with research, iterations, and key decisions.",
-        media: [{ kind: "video", alt: "Process video placeholder" }],
-      },
-      {
-        heading: "Outcome",
-        body: "Replace with the measurable or qualitative result.",
-      },
-    ],
+    slug: "the-plugin-no-one-asked-for",
+    title: "The plugin no one asked for",
+    tagline: "From a contested bet to a company priority",
+    summary: "From a contested bet to a company priority.",
+    tag: "PRODUCT STRATEGY",
+    company: "Monotype",
+    cover: { kind: "image", src: "/images/mock-plugin.png", alt: "Plugin product screen" },
+    mediaStyle: "overflow-phone",
+    background: "/images/bg-purple.png",
+    sections: [],
   },
+  {
+    slug: "brand-licensing-protection",
+    title: "Brand Licensing Protection",
+    tagline: "Finding unlicensed font use before the audit does",
+    summary: "Finding unlicensed font use before the audit does.",
+    tag: "SYSTEMS DESIGN",
+    company: "Monotype",
+    cover: { kind: "image", src: "/images/mock-brand-licensing.png", alt: "Brand Licensing Protection product screen" },
+    mediaStyle: "contained",
+    background: "/images/bg-purple.png",
+    sections: [],
+  },
+  {
+    slug: "ai-search",
+    title: "AI search",
+    tagline: "HAI",
+    summary: "HAI",
+    tag: "HAI",
+    company: "Monotype",
+    cover: { kind: "image", src: "/images/mock-ai-search.png", alt: "AI search product screen" },
+    mediaStyle: "contained",
+    background: "/images/bg-purple.png",
+    sections: [],
+  },
+  {
+    slug: "agentic-assistant",
+    title: "Agentic assistant",
+    tagline: "An assistant that acts freely where it can undo",
+    summary: "An assistant that acts freely where it can undo.",
+    tag: "HAI",
+    company: "Monotype",
+    cover: undefined,
+    mediaStyle: "none",
+    background: "/images/bg-purple.png",
+    sections: [],
+  },
+  {
+    slug: "spinny-pay",
+    title: "Spinny Pay",
+    tagline: "Closing ₹70 lakh a month of fuel leakage",
+    summary:
+      "Spinny's cars were refuelled for ~400 km each but driven ~150. Drivers wouldn't explain, so I worked as one for three days until they did. I then designed a payment flow that closed each route, cutting monthly fuel spend from ₹2.4 Cr to ₹1.7 Cr.",
+    tag: "SYSTEMS DESIGN",
+    company: "Spinny",
+    cover: { kind: "image", src: "/images/mock-spinny-pay.png", alt: "Spinny Pay product screen" },
+    mediaStyle: "overflow-phone",
+    background: "/images/bg-mint.png",
+    sections: [],
+  },
+  {
+    slug: "spinny-pro",
+    title: "Spinny Pro",
+    tagline: "Car service the customer can't see, made visible",
+    summary: "Car service the customer can't see, made visible.",
+    tag: "0 TO 1",
+    company: "Spinny",
+    cover: { kind: "image", src: "/images/mock-spinny-pro.png", alt: "Spinny Pro product screen" },
+    mediaStyle: "overflow-phone",
+    background: "/images/bg-mint.png",
+    sections: [],
+  },
+  {
+    slug: "spinny-help-and-support",
+    title: "Spinny Help & support",
+    tagline: "D+60 NPS from 63 to 87",
+    summary: "D+60 NPS from 63 to 87.",
+    tag: "SERVICE DESIGN",
+    company: "Spinny",
+    cover: { kind: "image", src: "/images/mock-spinny-help.png", alt: "Spinny Help & support product screen" },
+    mediaStyle: "overflow-phone",
+    background: "/images/bg-mint.png",
+    sections: [],
+  },
+];
+
+export const recentWork = caseStudies.filter((cs) => cs.company === "Monotype");
+export const earlierWork = caseStudies.filter((cs) => cs.company !== "Monotype");
+
+export const homeFeatured = [
+  caseStudies.find((cs) => cs.slug === "brand-type-fidelity")!,
+  caseStudies.find((cs) => cs.slug === "spinny-pay")!,
 ];

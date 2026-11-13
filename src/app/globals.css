@@ -1,26 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  /* Placeholder tokens — replace with real values pulled from Figma. */
   --background: #ffffff;
-  --foreground: #111111;
-  --accent: #111111;
+  --foreground: #303030;
+  --foreground-secondary: #585858;
+  --foreground-tertiary: #767676;
+  --surface-secondary: #f1f1f1;
+  --border: #e1e1e1;
+  --accent: #1a73e8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-tertiary: var(--foreground-tertiary);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-border: var(--border);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --accent: #ededed;
-  }
+  --font-sans: var(--font-lexend);
 }
 
 body {
@@ -32,7 +30,7 @@ body {
 .wrapper {
   margin-inline: auto;
   width: 100%;
-  max-width: 72rem;
+  max-width: 55rem;
   padding-inline: 1.5rem;
 }
 
@@ -43,7 +41,7 @@ body {
 }
 
 .prose-body {
-  max-width: 42rem;
-  line-height: 1.75;
-  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+  line-height: 1.5;
+  color: var(--foreground-secondary);
+  white-space: pre-line;
 }

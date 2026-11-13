@@ -14,20 +14,21 @@ export type ContentSection = {
 export type CaseStudy = {
   slug: string;
   title: string;
+  tagline: string;
   summary: string;
-  role?: string;
-  year?: string;
-  tags?: string[];
+  tag: string;
+  company: string;
+  status?: string;
   cover?: MediaItem;
+  mediaStyle: "overflow-phone" | "contained" | "none";
+  background?: string;
   sections: ContentSection[];
 };
 
-export type Article = {
+export type WritingPost = {
   slug: string;
   title: string;
-  summary: string;
-  date?: string;
-  tags?: string[];
+  topic: string;
   cover?: MediaItem;
   sections: ContentSection[];
 };
