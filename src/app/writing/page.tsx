@@ -33,7 +33,7 @@ export default function WritingPage() {
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="group flex w-full items-center gap-3 animate-expressive-fade-slow"
+              className="flex w-full items-center gap-3 animate-expressive-fade-slow"
               style={{ "--stagger": `${70 + i * 25}ms` } as React.CSSProperties}
             >
               <div className="min-w-0 flex-1">
