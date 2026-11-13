@@ -58,7 +58,9 @@ export function CaseStudyMedia({
         <img
           src={asset(caseStudy.cover.src)}
           alt={caseStudy.cover.alt ?? ""}
-          className="relative z-10 mx-auto block w-[56%]"
+          className={`relative z-10 mx-auto block w-[56%] ${
+            caseStudy.coverFramed ? "rounded-t-2xl border border-black" : ""
+          }`}
         />
       </div>
     );
