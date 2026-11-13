@@ -45,3 +45,50 @@ body {
   color: var(--foreground-secondary);
   white-space: pre-line;
 }
+
+/*
+ * Material 3 Expressive motion, computed from the real spring tokens
+ * (not a bezier approximation): spatial default = stiffness 380,
+ * damping ratio 0.8 (underdamped, slight overshoot); effects default
+ * = stiffness 1600, damping ratio 1 (critically damped, no overshoot).
+ * Each `linear()` stop below is a sampled point on that spring's
+ * actual step response.
+ */
+@keyframes expressive-scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes expressive-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-expressive-in {
+  transform-origin: center;
+  animation:
+    expressive-scale-in 417ms linear(
+      0, 0.0361, 0.1232, 0.2367, 0.3591, 0.4789, 0.5891, 0.6859, 0.7677,
+      0.8347, 0.8878, 0.9288, 0.9592, 0.9811, 0.9961, 1.0058, 1.0115,
+      1.0144, 1.0152, 1.0147, 1.0134, 1.0116, 1.0098, 1.008, 1.0063,
+      1.0048, 1.0036, 1.0025, 1.0017
+    ) both,
+    expressive-fade-in 155ms linear(
+      0, 0.0737, 0.2231, 0.3844, 0.5299, 0.6502, 0.7446, 0.8163, 0.8694,
+      0.9081, 0.9358, 0.9554, 0.9693, 0.9789, 0.9856
+    ) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-expressive-in {
+    animation: none;
+  }
+}
