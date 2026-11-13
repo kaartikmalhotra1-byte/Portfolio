@@ -15,7 +15,7 @@ export function CaseStudyGridCard({
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
-      className={`group flex w-full max-w-[428px] flex-col gap-3 ${className}`}
+      className={`group flex w-full flex-col gap-3 ${className}`}
       style={style}
     >
       <CaseStudyMedia caseStudy={caseStudy} />

@@ -32,7 +32,7 @@ export default function CaseStudiesPage() {
             <p className="font-medium text-foreground">Recent work</p>
             <p className="text-sm text-foreground-tertiary">at Monotype</p>
           </div>
-          <div className="flex flex-wrap gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {recentWork.map((cs, i) => (
               <CaseStudyGridCard
                 key={cs.slug}
@@ -54,7 +54,7 @@ export default function CaseStudiesPage() {
             <p className="font-medium text-foreground">Earlier work</p>
             <p className="text-sm text-foreground-tertiary">at Zomato &amp; Spinny</p>
           </div>
-          <div className="flex flex-wrap gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {earlierWork.map((cs, i) => (
               <CaseStudyGridCard
                 key={cs.slug}

@@ -28,6 +28,10 @@ body {
 }
 
 .wrapper {
+  /* content-box so max-width is the actual content width (880px,
+     matching Figma's content column exactly) and padding adds
+     outside it as a safety gutter, instead of eating into it. */
+  box-sizing: content-box;
   margin-inline: auto;
   width: 100%;
   max-width: 55rem;
