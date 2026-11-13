@@ -3,89 +3,69 @@ import { asset } from "@/lib/asset";
 
 function TagPill({ tag }: { tag: string }) {
   return (
-    <span className="absolute right-3 top-3 rounded-full border border-border bg-white px-2 py-1 text-[9px] text-foreground">
+    <span className="absolute right-3 top-3 z-20 rounded-full border border-border bg-white px-2 py-1 text-[9px] text-foreground">
       {tag}
     </span>
   );
 }
 
-function Backdrop({
+/**
+ * `backdropAspect`/`coverTopOffset` match Figma exactly: the Home
+ * page's featured cards use a 428/272 backdrop with the cover image
+ * starting 19.12% down, while the Case studies index grid uses
+ * 428/304 with the cover starting 21.05% down — two real, different
+ * values in the source file for the same images, not one shared
+ * ratio. In both cases the card clips the cover image at its own
+ * bottom edge (Figma's `overflow-clip` is literal) — the image does
+ * not spill past the card into the page below.
+ */
+export function CaseStudyMedia({
   caseStudy,
-  aspect,
-  children,
+  backdropAspect = "428 / 304",
+  coverTopOffset = "21.05%",
 }: {
   caseStudy: CaseStudy;
-  aspect: string;
-  children?: React.ReactNode;
+  backdropAspect?: string;
+  coverTopOffset?: string;
 }) {
   return (
     <div
-      className="absolute inset-x-0 top-0 overflow-hidden rounded-3xl bg-surface-secondary"
-      style={{ aspectRatio: aspect }}
+      className="relative w-full overflow-hidden rounded-[24px] bg-surface-secondary [corner-shape:squircle]"
+      style={{ aspectRatio: backdropAspect }}
     >
       {caseStudy.background ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={asset(caseStudy.background)}
           alt=""
-          className="h-full w-full object-cover opacity-80"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
         />
       ) : null}
-      <TagPill tag={caseStudy.tag} />
-      {children}
-    </div>
-  );
-}
 
-/**
- * `backdropAspect` matches Figma exactly: the Home page's featured
- * cards use a 428/272 backdrop, while the Case studies index grid
- * uses 428/304 for the same images — two real, different values in
- * the source file, not one shared ratio.
- */
-export function CaseStudyMedia({
-  caseStudy,
-  backdropAspect = "428 / 304",
-}: {
-  caseStudy: CaseStudy;
-  backdropAspect?: string;
-}) {
-  if (caseStudy.mediaStyle === "overflow-phone" && caseStudy.cover?.src) {
-    return (
-      <div className="relative w-full">
-        <Backdrop caseStudy={caseStudy} aspect={backdropAspect} />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+      <TagPill tag={caseStudy.tag} />
+
+      {caseStudy.mediaStyle === "overflow-phone" && caseStudy.cover?.src ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={asset(caseStudy.cover.src)}
           alt={caseStudy.cover.alt ?? ""}
-          className={`relative z-10 mx-auto block w-[56%] ${
+          className={`absolute left-1/2 z-10 w-[56%] -translate-x-1/2 ${
             caseStudy.coverFramed ? "rounded-t-2xl border border-black" : ""
           }`}
+          style={{ top: coverTopOffset }}
         />
-      </div>
-    );
-  }
+      ) : null}
 
-  if (caseStudy.mediaStyle === "contained" && caseStudy.cover?.src) {
-    return (
-      <div className="relative w-full" style={{ aspectRatio: backdropAspect }}>
-        <Backdrop caseStudy={caseStudy} aspect={backdropAspect}>
-          <div className="absolute inset-0 flex items-center justify-center p-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={asset(caseStudy.cover.src)}
-              alt={caseStudy.cover.alt ?? ""}
-              className="max-h-full max-w-full rounded-lg object-contain"
-            />
-          </div>
-        </Backdrop>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative w-full" style={{ aspectRatio: backdropAspect }}>
-      <Backdrop caseStudy={caseStudy} aspect={backdropAspect} />
+      {caseStudy.mediaStyle === "contained" && caseStudy.cover?.src ? (
+        <div className="absolute inset-0 z-10 flex items-center justify-center p-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset(caseStudy.cover.src)}
+            alt={caseStudy.cover.alt ?? ""}
+            className="max-h-full max-w-full rounded-lg object-contain"
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

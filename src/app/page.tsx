@@ -95,7 +95,7 @@ export default function Home() {
                 style={{ "--stagger": `${180 + i * 80}ms` } as React.CSSProperties}
               >
                 <div className="w-full flex-shrink-0 sm:w-[428px]">
-                  <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" />
+                  <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" coverTopOffset="19.12%" />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">
                   <h3 className="text-[19px] font-semibold text-foreground">{cs.title}</h3>
