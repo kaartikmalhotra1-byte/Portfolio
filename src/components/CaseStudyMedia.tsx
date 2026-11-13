@@ -50,7 +50,7 @@ export function CaseStudyMedia({
           src={asset(caseStudy.cover.src)}
           alt={caseStudy.cover.alt ?? ""}
           className={`absolute left-1/2 z-10 -translate-x-1/2 ${
-            caseStudy.coverFramed ? "rounded-t-2xl border border-black" : ""
+            caseStudy.coverFramed ? "rounded-t-2xl border border-black [corner-shape:squircle]" : ""
           }`}
           style={{ top: coverTopOffset, width: caseStudy.coverWidth ?? "56%" }}
         />

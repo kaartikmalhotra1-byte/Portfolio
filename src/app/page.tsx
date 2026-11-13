@@ -41,7 +41,7 @@ export default function Home() {
             <img
               src={asset("/images/profile.png")}
               alt="Kaartik Malhotra"
-              className="h-[232px] w-[220px] rounded-2xl object-cover object-top animate-expressive-in"
+              className="h-[232px] w-[220px] rounded-2xl object-cover object-top [corner-shape:squircle] animate-expressive-in"
             />
             <div className="flex items-center gap-4 animate-expressive-fade">
               <a href="https://www.linkedin.com/in/kaartikmalhotra14/" target="_blank" rel="noreferrer">
