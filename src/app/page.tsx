@@ -98,7 +98,7 @@ export default function Home() {
                   <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" coverTopOffset="19.12%" />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">
-                  <h3 className="text-[19px] font-semibold text-foreground">{cs.title}</h3>
+                  <h3 className="text-[19px] font-semibold text-foreground">{cs.homeTitle ?? cs.title}</h3>
                   <p className="text-sm text-foreground-tertiary">
                     {cs.summary}
                     {cs.status ? <span className="block mt-2">{cs.status}</span> : null}

@@ -4,6 +4,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "brand-type-fidelity",
     title: "Brand Type Fidelity",
+    homeTitle: "Catching brand breaches on the canvas, not on the printed proof.",
     tagline: "Catching breaches on the canvas, not the printed proof",
     summary:
       "A global publisher found the wrong typeface only on a printed draft: 90+ hours of rework and a reprint. I designed a check that runs as designers work in Adobe. Rules and a classifier handle the clear cases, and a language model handles only the ambiguous ones, saying so when it's unsure.",
@@ -68,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "spinny-pay",
     title: "Spinny Pay",
+    homeTitle: "₹70 lakh a month was disappearing. Nobody would say how.",
     tagline: "Closing ₹70 lakh a month of fuel leakage",
     summary:
       "Spinny's cars were refuelled for ~400 km each but driven ~150. Drivers wouldn't explain, so I worked as one for three days until they did. I then designed a payment flow that closed each route, cutting monthly fuel spend from ₹2.4 Cr to ₹1.7 Cr.",

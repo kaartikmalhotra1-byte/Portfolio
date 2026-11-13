@@ -14,6 +14,7 @@ export type ContentSection = {
 export type CaseStudy = {
   slug: string;
   title: string;
+  homeTitle?: string;
   tagline: string;
   summary: string;
   tag: string;
