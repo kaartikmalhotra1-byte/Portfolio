@@ -19,7 +19,6 @@ export type CaseStudy = {
   summary: string;
   tag: string;
   company: string;
-  status?: string;
   cover?: MediaItem;
   mediaStyle: "overflow-phone" | "none";
   coverWidth?: string;

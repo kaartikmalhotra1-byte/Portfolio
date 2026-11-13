@@ -39,10 +39,7 @@ export default async function CaseStudyPage({
             {cs.company} · {cs.tag}
           </p>
           <h1 className="text-[28px] font-semibold text-foreground">{cs.title}</h1>
-          <p className="max-w-2xl text-base text-foreground-secondary">{cs.summary}</p>
-          {cs.status ? (
-            <p className="text-sm text-foreground-tertiary">{cs.status}</p>
-          ) : null}
+          <p className="max-w-2xl whitespace-pre-line text-base text-foreground-secondary">{cs.summary}</p>
         </div>
 
         <div className="w-full max-w-[428px]">
