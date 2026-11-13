@@ -92,3 +92,75 @@ body {
     animation: none;
   }
 }
+
+/*
+ * Nav active-state underline: reveals left-to-right like it's being
+ * drawn. The underline asset is a filled hand-drawn shape (not a
+ * stroked line), so a stroke-dasharray draw can't apply here; a
+ * clip-path wipe reads the same way. The timing itself is still the
+ * real Expressive Spatial Default spring step response (stiffness
+ * 380, damping 0.8), trimmed to where it first reaches full reveal
+ * and baked directly into keyframe stops (an easing function can't
+ * be used here since the spring's overshoot would extrapolate the
+ * clip-path past 100%, which is invalid).
+ */
+@keyframes expressive-draw-in {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  6.6667% {
+    clip-path: inset(0 96.3945% 0 0);
+  }
+  13.3333% {
+    clip-path: inset(0 87.6766% 0 0);
+  }
+  20% {
+    clip-path: inset(0 76.3291% 0 0);
+  }
+  26.6667% {
+    clip-path: inset(0 64.0885% 0 0);
+  }
+  33.3333% {
+    clip-path: inset(0 52.1059% 0 0);
+  }
+  40% {
+    clip-path: inset(0 41.0875% 0 0);
+  }
+  46.6667% {
+    clip-path: inset(0 31.4125% 0 0);
+  }
+  53.3333% {
+    clip-path: inset(0 23.2294% 0 0);
+  }
+  60% {
+    clip-path: inset(0 16.5317% 0 0);
+  }
+  66.6667% {
+    clip-path: inset(0 11.2158% 0 0);
+  }
+  73.3333% {
+    clip-path: inset(0 7.1242% 0 0);
+  }
+  80% {
+    clip-path: inset(0 4.0758% 0 0);
+  }
+  86.6667% {
+    clip-path: inset(0 1.8872% 0 0);
+  }
+  93.3333% {
+    clip-path: inset(0 0.3853% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.animate-expressive-draw {
+  animation: expressive-draw-in 223ms linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-expressive-draw {
+    animation: none;
+  }
+}
