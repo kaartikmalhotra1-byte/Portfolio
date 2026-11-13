@@ -107,7 +107,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-center gap-3 text-sm font-medium text-foreground">
             <a href="mailto:kaartikmalhotra1@gmail.com">kaartikmalhotra1@gmail.com</a>
             <span className="size-1 rounded-full bg-border" />
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="underline">
+            <a href="https://www.linkedin.com/in/kaartikmalhotra14/" target="_blank" rel="noreferrer" className="underline">
               LinkedIn
             </a>
             <span className="size-1 rounded-full bg-border" />

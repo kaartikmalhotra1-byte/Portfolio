@@ -44,7 +44,7 @@ export default function Home() {
               className="h-[232px] w-[220px] rounded-2xl object-cover object-top animate-expressive-in"
             />
             <div className="flex items-center gap-4 animate-expressive-fade">
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/kaartikmalhotra14/" target="_blank" rel="noreferrer">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={asset("/images/linkedin.png")} alt="LinkedIn" className="size-6" />
               </a>
