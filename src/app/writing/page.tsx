@@ -38,7 +38,7 @@ export default function WritingPage() {
               <div className="min-w-0 flex-1">
                 <p className="relative inline-block text-base text-foreground">
                   {post.title}
-                  <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300 group-hover:scale-x-100" />
+                  <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-border transition-transform duration-300 group-hover:scale-x-100" />
                 </p>
                 <p className="text-sm text-foreground-tertiary">{post.topic}</p>
               </div>
