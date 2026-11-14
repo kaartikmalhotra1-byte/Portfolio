@@ -59,18 +59,25 @@ body {
 }
 
 .wrapper {
-  /* content-box so max-width is the actual content width (880px,
-     matching Figma's content column exactly) and padding adds
-     outside it as a safety gutter, instead of eating into it. */
-  box-sizing: content-box;
+  /*
+   * border-box, with max-width padded out by exactly the gutter, so
+   * the content column is always 880px (Figma's exact width) once
+   * there's room for it, while width:100% still shrinks the box to
+   * fit narrower viewports instead of overflowing past them — the
+   * content-box version of this did the opposite: it added the
+   * gutter outside the 100% box, overflowing every viewport narrower
+   * than ~928px by exactly the padding amount.
+   */
+  box-sizing: border-box;
   margin-inline: auto;
   width: 100%;
-  max-width: 55rem;
+  max-width: 58rem; /* 880px content + 2 * 1.5rem padding */
   padding-inline: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .wrapper {
+    max-width: 60rem; /* 880px content + 2 * 2.5rem padding */
     padding-inline: 2.5rem;
   }
 }
