@@ -17,7 +17,7 @@ const highlights = [
 export default function Home() {
   return (
     <div className="wrapper flex flex-col gap-16 py-14">
-      <NavRow />
+      <NavRow active="home" />
 
       <div className="flex flex-col gap-10">
         <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">

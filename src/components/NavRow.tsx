@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { asset } from "@/lib/asset";
 
-type NavKey = "case-studies" | "writing" | "about";
+type NavKey = "home" | "case-studies" | "writing" | "about";
 
 const links: { key: NavKey; href: string; label: string }[] = [
+  { key: "home", href: "/", label: "Home" },
   { key: "case-studies", href: "/case-studies", label: "Case studies" },
   { key: "writing", href: "/writing", label: "Writing" },
   { key: "about", href: "/about", label: "About" },
@@ -15,7 +16,7 @@ export function NavRow({ active }: { active?: NavKey }) {
       <Link
         href="/"
         className={`text-base font-medium tracking-tight ${
-          active ? "text-foreground-secondary" : "text-foreground"
+          active && active !== "home" ? "text-foreground-secondary" : "text-foreground"
         }`}
       >
         KAARTIK MALHOTRA
