@@ -37,10 +37,10 @@ export default function WritingPage() {
               style={{ "--stagger": `${70 + i * 25}ms` } as React.CSSProperties}
             >
               <div className="flex min-w-0 flex-1 flex-col gap-1">
-                <p className="flex items-center gap-2 text-base text-foreground">
+                <p className="flex items-center gap-1 text-base text-foreground">
                   <span className="relative inline-block min-w-0">
                     {post.title}
-                    <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-foreground transition-transform duration-500 group-hover:scale-x-100" />
+                    <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-500 group-hover:scale-x-100" />
                   </span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
