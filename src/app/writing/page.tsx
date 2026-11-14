@@ -36,18 +36,18 @@ export default function WritingPage() {
               className="group flex w-full items-center gap-3 animate-expressive-fade-slow"
               style={{ "--stagger": `${70 + i * 25}ms` } as React.CSSProperties}
             >
-              <div className="min-w-0 flex-1">
-                <p className="flex items-center gap-3 text-base text-foreground">
+              <div className="flex min-w-0 flex-1 flex-col gap-1">
+                <p className="flex items-center gap-2 text-base text-foreground">
                   <span className="relative inline-block min-w-0">
                     {post.title}
-                    <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-border transition-transform duration-500 group-hover:scale-x-100" />
+                    <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-foreground transition-transform duration-500 group-hover:scale-x-100" />
                   </span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={asset("/images/arrow-dark.svg")}
                     alt=""
                     aria-hidden
-                    className="size-6 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                    className="size-4 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   />
                 </p>
                 <p className="text-sm text-foreground-tertiary">{post.topic}</p>
