@@ -35,14 +35,14 @@ export default async function WritingPostPage({
       <NavRow active="writing" />
 
       <div className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           <p className="text-sm text-foreground-tertiary">
             <Link href="/writing" className="hover:text-foreground">
               Writing
             </Link>{" "}
             / <span className="text-foreground">{post.title}</span>
           </p>
-          <h1 className="max-w-2xl text-[28px] font-semibold text-foreground">{post.title}</h1>
+          <h1 className="mt-8 max-w-2xl text-[28px] font-semibold text-foreground">{post.title}</h1>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-3">

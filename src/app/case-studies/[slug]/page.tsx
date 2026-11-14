@@ -35,27 +35,27 @@ export default async function CaseStudyPage({
       <NavRow active="case-studies" />
 
       <div className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           <p className="text-sm text-foreground-tertiary">
             <Link href="/case-studies" className="hover:text-foreground">
               Case studies
             </Link>{" "}
             / <span className="text-foreground">{cs.title}</span>
           </p>
-          <h1 className="text-[28px] font-semibold text-foreground">{cs.title}</h1>
-          <p className="max-w-2xl text-base text-foreground-secondary">{cs.tagline}</p>
-        </div>
+          <h1 className="mt-8 text-[28px] font-semibold text-foreground">{cs.title}</h1>
+          <p className="mt-2 max-w-2xl text-base text-foreground-secondary">{cs.tagline}</p>
 
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
-              {cs.company}
-            </span>
-            <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
-              {cs.tag}
-            </span>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
+                {cs.company}
+              </span>
+              <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
+                {cs.tag}
+              </span>
+            </div>
+            <p className="text-sm text-foreground-tertiary">{formatDate(cs.publishedAt)}</p>
           </div>
-          <p className="text-sm text-foreground-tertiary">{formatDate(cs.publishedAt)}</p>
         </div>
 
         <Divider />
