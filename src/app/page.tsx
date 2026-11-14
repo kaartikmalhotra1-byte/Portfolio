@@ -89,22 +89,27 @@ export default function Home() {
           </h2>
           <div className="mt-6 flex flex-col gap-10">
             {homeFeatured.map((cs, i) => (
-              <div
+              <Link
                 key={cs.slug}
-                className="flex flex-col items-center gap-10 sm:flex-row animate-expressive-fade"
+                href={`/case-studies/${cs.slug}`}
+                className="group flex flex-col items-center gap-10 animate-expressive-fade sm:flex-row"
                 style={{ "--stagger": `${180 + i * 80}ms` } as React.CSSProperties}
               >
-                <div className="w-full flex-shrink-0 sm:w-[428px]">
+                <div className="w-full flex-shrink-0 transition-transform duration-200 group-hover:-translate-y-1 sm:w-[428px]">
                   <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" coverTopOffset="19.12%" />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">
                   <h3 className="text-[19px] font-semibold text-foreground">{cs.homeTitle ?? cs.title}</h3>
                   <p className="whitespace-pre-line text-sm text-foreground-tertiary">{cs.summary}</p>
-                  <Link href={`/case-studies/${cs.slug}`} className="w-fit">
-                    <Button label="Read more" variant="secondary" />
-                  </Link>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset("/images/arrow-dark.svg")}
+                    alt=""
+                    aria-hidden
+                    className="size-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <Link
