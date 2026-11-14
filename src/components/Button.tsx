@@ -11,7 +11,7 @@ export function Button({ label, variant = "primary", iconOnly = false }: ButtonP
   return (
     <span
       className={`squircle-cta inline-flex items-center gap-1 px-3 py-2 text-sm transition-shadow duration-200 hover:shadow-[-4px_4px_8px_0px_#c4c4c4] ${
-        isPrimary ? "bg-foreground text-white" : "bg-surface-secondary text-foreground"
+        isPrimary ? "bg-foreground text-white" : iconOnly ? "text-foreground" : "bg-surface-secondary text-foreground"
       }`}
     >
       {!iconOnly ? <span>{label}</span> : null}
