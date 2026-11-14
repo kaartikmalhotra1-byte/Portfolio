@@ -60,7 +60,7 @@ export default function AboutPage() {
             {career.map((item, i) => (
               <div
                 key={i}
-                className="animate-expressive-fade-slow"
+                className="flex flex-col gap-1 animate-expressive-fade-slow"
                 style={{ "--stagger": `${120 + i * 40}ms` } as React.CSSProperties}
               >
                 <p className="font-semibold text-foreground">{item.company}</p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
             {education.map((item, i) => (
               <div
                 key={i}
-                className="animate-expressive-fade-slow"
+                className="flex flex-col gap-1 animate-expressive-fade-slow"
                 style={{ "--stagger": `${190 + i * 40}ms` } as React.CSSProperties}
               >
                 <p className="font-semibold text-foreground">{item.program}</p>
