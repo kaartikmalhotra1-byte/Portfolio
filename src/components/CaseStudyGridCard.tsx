@@ -20,7 +20,7 @@ export function CaseStudyGridCard({
     >
       <CaseStudyMedia caseStudy={caseStudy} />
       <div className="flex items-center gap-10">
-        <div className="flex-1 min-w-0">
+        <div className="flex flex-1 flex-col gap-1 min-w-0">
           <p className="font-medium text-foreground">{caseStudy.title}</p>
           <p className="text-sm text-foreground-tertiary">{caseStudy.tagline}</p>
         </div>
