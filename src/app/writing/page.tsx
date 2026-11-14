@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { NavRow } from "@/components/NavRow";
 import { Divider } from "@/components/Divider";
 import { PageFooter } from "@/components/PageFooter";
-import { Button } from "@/components/Button";
 import { writingPosts } from "@/content/writing";
 
 export const metadata: Metadata = {
@@ -33,14 +32,16 @@ export default function WritingPage() {
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="flex w-full items-center gap-3 animate-expressive-fade-slow"
+              className="group flex w-full items-center gap-3 animate-expressive-fade-slow"
               style={{ "--stagger": `${70 + i * 25}ms` } as React.CSSProperties}
             >
               <div className="min-w-0 flex-1">
-                <p className="text-base text-foreground">{post.title}</p>
+                <p className="relative inline-block text-base text-foreground">
+                  {post.title}
+                  <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-300 group-hover:scale-x-100" />
+                </p>
                 <p className="text-sm text-foreground-tertiary">{post.topic}</p>
               </div>
-              <Button label="" variant="secondary" iconOnly />
             </Link>
           ))}
         </div>
