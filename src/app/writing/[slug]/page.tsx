@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NavRow } from "@/components/NavRow";
 import { Divider } from "@/components/Divider";
 import { PageFooter } from "@/components/PageFooter";
 import { writingPosts } from "@/content/writing";
+import { formatDate } from "@/lib/date";
 
 export function generateStaticParams() {
   return writingPosts.map((post) => ({ slug: post.slug }));
@@ -34,8 +36,20 @@ export default async function WritingPostPage({
 
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <p className="text-sm text-foreground-tertiary">{post.topic}</p>
+          <p className="text-sm text-foreground-tertiary">
+            <Link href="/writing" className="hover:text-foreground">
+              Writing
+            </Link>{" "}
+            / <span className="text-foreground">{post.title}</span>
+          </p>
           <h1 className="max-w-2xl text-[28px] font-semibold text-foreground">{post.title}</h1>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
+            {post.topic}
+          </span>
+          <p className="text-sm text-foreground-tertiary">{formatDate(post.publishedAt)}</p>
         </div>
 
         <Divider />

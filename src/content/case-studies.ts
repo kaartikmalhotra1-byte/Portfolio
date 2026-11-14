@@ -3,6 +3,7 @@ import type { CaseStudy } from "./types";
 export const caseStudies: CaseStudy[] = [
   {
     slug: "brand-type-fidelity",
+    publishedAt: "2026-11-14",
     title: "Brand Type Fidelity",
     homeTitle: "Catching brand breaches on the canvas, not on the printed proof.",
     tagline: "Catching breaches on the canvas, not the printed proof",
@@ -17,6 +18,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "the-plugin-no-one-asked-for",
+    publishedAt: "2026-11-14",
     title: "The plugin no one asked for",
     tagline: "From a contested bet to a company priority",
     summary: "From a contested bet to a company priority.",
@@ -29,6 +31,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "brand-licensing-protection",
+    publishedAt: "2026-11-14",
     title: "Brand Licensing Protection",
     tagline: "Finding unlicensed font use before the audit does",
     summary: "Finding unlicensed font use before the audit does.",
@@ -42,6 +45,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "ai-search",
+    publishedAt: "2026-11-14",
     title: "AI search",
     tagline: "HAI",
     summary: "HAI",
@@ -55,6 +59,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "agentic-assistant",
+    publishedAt: "2026-11-14",
     title: "Agentic assistant",
     tagline: "An assistant that acts freely where it can undo",
     summary: "An assistant that acts freely where it can undo.",
@@ -67,6 +72,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "spinny-pay",
+    publishedAt: "2026-11-14",
     title: "Spinny Pay",
     homeTitle: "₹70 lakh a month was disappearing. Nobody would say how.",
     tagline: "Closing ₹70 lakh a month of fuel leakage",
@@ -82,6 +88,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "spinny-pro",
+    publishedAt: "2026-11-14",
     title: "Spinny Pro",
     tagline: "Car service the customer can't see, made visible",
     summary: "Car service the customer can't see, made visible.",
@@ -95,6 +102,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "spinny-help-and-support",
+    publishedAt: "2026-11-14",
     title: "Spinny Help & support",
     tagline: "D+60 NPS from 63 to 87",
     summary: "D+60 NPS from 63 to 87.",

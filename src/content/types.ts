@@ -19,6 +19,7 @@ export type CaseStudy = {
   summary: string;
   tag: string;
   company: string;
+  publishedAt: string;
   cover?: MediaItem;
   mediaStyle: "overflow-phone" | "none";
   coverWidth?: string;
@@ -31,6 +32,7 @@ export type WritingPost = {
   slug: string;
   title: string;
   topic: string;
+  publishedAt: string;
   cover?: MediaItem;
   sections: ContentSection[];
 };
