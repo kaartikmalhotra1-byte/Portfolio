@@ -39,7 +39,7 @@ export function NavRow({ active }: { active?: NavKey }) {
                   src={asset("/images/nav-underline.svg")}
                   alt=""
                   aria-hidden
-                  className="absolute left-0 top-full h-[5px] w-full -scale-x-100 animate-expressive-draw"
+                  className="absolute left-0 top-full h-[5px] w-full animate-expressive-draw"
                 />
               ) : null}
             </Link>
