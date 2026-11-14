@@ -169,6 +169,30 @@ body {
 }
 
 /*
+ * Tile hover lift (case studies grid + home featured rows): the same
+ * Expressive Spatial Default spring as the page-load scale-in above,
+ * used here as a transition timing function instead of a keyframe —
+ * the slight overshoot in the curve is what gives the lift its small
+ * bounce on the way up.
+ */
+.hover-lift-expressive {
+  transition:
+    translate 417ms linear(
+      0, 0.0361, 0.1232, 0.2367, 0.3591, 0.4789, 0.5891, 0.6859, 0.7677,
+      0.8347, 0.8878, 0.9288, 0.9592, 0.9811, 0.9961, 1.0058, 1.0115,
+      1.0144, 1.0152, 1.0147, 1.0134, 1.0116, 1.0098, 1.008, 1.0063,
+      1.0048, 1.0036, 1.0025, 1.0017
+    ),
+    box-shadow 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift-expressive {
+    transition: none;
+  }
+}
+
+/*
  * Nav active-state underline: reveals left-to-right like it's being
  * drawn. The underline asset is a filled hand-drawn shape (not a
  * stroked line), so a stroke-dasharray draw can't apply here; a

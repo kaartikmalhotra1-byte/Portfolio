@@ -95,7 +95,7 @@ export default function Home() {
                 className="group flex flex-col items-center gap-10 animate-expressive-fade sm:flex-row"
                 style={{ "--stagger": `${180 + i * 80}ms` } as React.CSSProperties}
               >
-                <div className="w-full flex-shrink-0 transition-transform duration-200 group-hover:-translate-y-1 sm:w-[428px]">
+                <div className="w-full flex-shrink-0 sm:w-[428px]">
                   <CaseStudyMedia caseStudy={cs} backdropAspect="428 / 272" coverTopOffset="19.12%" />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">

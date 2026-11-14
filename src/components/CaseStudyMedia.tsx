@@ -30,7 +30,7 @@ export function CaseStudyMedia({
 }) {
   return (
     <div
-      className="squircle-tile relative w-full overflow-hidden bg-surface-secondary transition-shadow duration-200 group-hover:shadow-[-6px_6px_20px_0px_#c4c4c480]"
+      className="hover-lift-expressive squircle-tile relative w-full overflow-hidden bg-surface-secondary group-hover:-translate-y-1 group-hover:shadow-[-6px_6px_20px_0px_#c4c4c480]"
       style={{ aspectRatio: backdropAspect }}
     >
       {caseStudy.background ? (
