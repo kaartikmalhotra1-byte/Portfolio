@@ -1,9 +1,8 @@
-:HL["/Portfolio/_next/static/chunks/1xxpq24pe0oc-.css","style"]
+:HL["/Portfolio/_next/static/chunks/1zbh_iky6jzcf.css","style"]
 :HL["/Portfolio/_next/static/media/408869cf0d25d9f9-s.p.2svk7cnw5x6df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Portfolio/images/nav-underline.svg","image"]
 :HL["/Portfolio/images/bg-purple.png","image"]
 :HL["/Portfolio/images/mock-brand-type-fidelity.png","image"]
-:HL["/Portfolio/images/arrow-dark.svg","image"]
 :HL["/Portfolio/images/mock-plugin.png","image"]
 :HL["/Portfolio/images/mock-brand-licensing.png","image"]
 :HL["/Portfolio/images/mock-ai-search.png","image"]
@@ -13,4 +12,4 @@
 :HL["/Portfolio/images/mock-spinny-help.png","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"case-studies","h":96,"c":"$Q2"}]]
-0:{"b":"PIgqXB_JDaYJw56UY9OoW","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"yXXkjFWaK4ZEPfS3ccwsL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

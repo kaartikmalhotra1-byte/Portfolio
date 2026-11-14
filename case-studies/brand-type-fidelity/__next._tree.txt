@@ -1,7 +1,7 @@
-:HL["/Portfolio/_next/static/chunks/1xxpq24pe0oc-.css","style"]
+:HL["/Portfolio/_next/static/chunks/1zbh_iky6jzcf.css","style"]
 :HL["/Portfolio/_next/static/media/408869cf0d25d9f9-s.p.2svk7cnw5x6df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Portfolio/images/nav-underline.svg","image"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"brand-type-fidelity","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"case-studies","h":96,"c":"$Q2"}]]
-0:{"b":"PIgqXB_JDaYJw56UY9OoW","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"yXXkjFWaK4ZEPfS3ccwsL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
