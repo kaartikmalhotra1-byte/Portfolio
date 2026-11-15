@@ -5,6 +5,7 @@ export const writingPosts: WritingPost[] = [
     slug: "agentic-experiences-designed-around-correcting",
     publishedAt: "2026-11-14",
     title: "Agentic experiences that are designed around correcting.",
+    subheading: "What a 10x drop cap taught us about building agentic products that recover well.",
     topic: "HAI",
     sections: [
       {

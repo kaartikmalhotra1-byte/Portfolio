@@ -31,6 +31,7 @@ export type CaseStudy = {
 export type WritingPost = {
   slug: string;
   title: string;
+  subheading?: string;
   topic: string;
   publishedAt: string;
   cover?: MediaItem;

@@ -43,6 +43,9 @@ export default async function WritingPostPage({
             / <span className="text-foreground">{post.title}</span>
           </p>
           <h1 className="mt-8 max-w-2xl text-[28px] font-semibold text-foreground">{post.title}</h1>
+          {post.subheading ? (
+            <p className="mt-2 max-w-2xl text-base text-foreground-secondary">{post.subheading}</p>
+          ) : null}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-3">
