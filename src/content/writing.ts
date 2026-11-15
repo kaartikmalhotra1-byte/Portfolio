@@ -45,7 +45,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "withholding-the-model",
     publishedAt: "2026-11-14",
-    title: "Withholding the Model",
+    title: "Withholding the model: confidence-tiered escalation as a design decision.",
     subheading: "Confidence-tiered escalation as a design decision, not just an architecture.",
     topic: "HAI",
     sections: [
