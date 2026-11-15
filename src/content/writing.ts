@@ -18,7 +18,7 @@ export const writingPosts: WritingPost[] = [
       },
       {
         heading: "Error or intent?",
-        body: "BTF flagged the drop cap correctly. The size was outside the guideline. But detection was never the hard part.\n\nThe hard part is that a breach can be a mistake or a decision, and the agent can't tell which. If it treats both the same, it punishes the designer for using judgment. So the most important thing a user does in an agentic product isn't accepting a fix. It's correcting the agent's read of what they meant.\n\nThe designer did exactly that. He marked the drop cap as an exception and gave a reason: creative freedom. For the first time, the system recorded not just \"ignore this\" but why.",
+        body: "BTF flagged the drop cap correctly. The size was outside the guideline. But detection was never the hard part.\n\nThe hard part is that a breach can be a mistake or a decision, and the agent can't tell which. If it treats both the same, it punishes the designer for using judgment. So the most important thing a user does in an agentic product isn't accepting a fix. It's correcting the agent's read of what they meant.\n\nThe designer did exactly that. He marked the drop cap as an exception and gave a reason: creative freedom. For the first time, the system recorded not just “ignore this” but why.",
       },
       {
         heading: "When a correction is too broad",
@@ -30,7 +30,7 @@ export const writingPosts: WritingPost[] = [
       },
       {
         heading: "Back to the designer",
-        body: "We shipped the text-level update in beta, built first for his company because that's where the problem surfaced.\n\nHis response: \"It really understands what's going on in the document now. It doesn't just flag what's wrong, it takes my feedback at the level I'm giving it.\"\n\nThat's the whole thesis, in a user's words.",
+        body: "We shipped the text-level update in beta, built first for his company because that's where the problem surfaced.\n\nHis response: “It really understands what's going on in the document now. It doesn't just flag what's wrong, it takes my feedback at the level I'm giving it.”\n\nThat's the whole thesis, in a user's words.",
       },
       {
         heading: "How we'll know if we're wrong",
@@ -45,9 +45,46 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "withholding-the-model",
     publishedAt: "2026-11-14",
-    title: "Withholding the model: confidence-tiered escalation as a design decision.",
+    title: "Withholding the Model",
+    subheading: "Confidence-tiered escalation as a design decision, not just an architecture.",
     topic: "HAI",
-    sections: [],
+    sections: [
+      {
+        body: "The rules are set in stone. The usage isn't.\n\nWhen we started designing Brand Type Fidelity (BTF), an Adobe plugin that checks every text layer against a company's typography guidelines, I spent weeks looking at real documents from different industries.\n\nOne thing kept coming up. Guidelines are precise: H1 to H7, body at 16px, specific weights and spacing. But the way designers actually use those styles shows no consistent pattern. The rules are set in stone. The usage isn't.\n\nThat changes the problem. Checking whether a text layer matches a rule is easy. The hard part is knowing which rule should apply, because the role of a piece of text is often ambiguous. And every wrong guess shows up as an annotation on the designer's canvas, interrupting their work.\n\nSo the question wasn't “how do we use AI to check typography?” It was: when is the model worth calling, and when should the system say nothing at all?",
+      },
+      {
+        heading: "The page that fools measurement",
+        body: "One document made this concrete: a publisher's edition of Around the World in 80 Days.\n\nEach chapter opened with the chapter number set small and bold. The body text underneath was larger. The publisher's guidelines said headings should be big and body text at 16px.\n\nA naive checker would get this page wrong twice. It would read the small bold chapter number as misused body text, and the larger body copy as an oversized heading. Two false flags on one page, both on typography that was exactly right.\n\nYou can't measure your way out of this. You have to read the page.",
+      },
+      {
+        heading: "Three decision makers",
+        body: "BTF splits the judgment across three tiers, and each one gets more context only when the one before it can't decide.\n\n1. The rules engine. A one-to-one check: does this text layer match a style defined in the guidelines? Helvetica Regular at 16px for body, and so on. It returns pass or fail. Fast, cheap, deterministic.\n\n2. The classifier. A lightweight model that asks a different question: is this style being used in the right role? It infers the role from cheap signals, like the sizes of nearby text on the page and the artboard dimensions, and returns high or low confidence.\n\n3. The LLM. Called only when the classifier is unsure. It gets the full page as JSON: what the other text frames actually say, whether there are images, how the page is composed. It reads, rather than measures.\n\nThe principle: context should grow with ambiguity. Most layers never need more than metrics. The model is held back until a case earns it.\n\nOn the book page, that's exactly what happened. The rules engine passed, because the chapter number matched a defined style. The classifier came back with low confidence: the text sat above the body but was smaller than it. So it escalated. The LLM read the words “Chapter One”, saw the bold weight and the position, and concluded the role was correct.\n\nNo annotation appeared. The designer was never interrupted.",
+      },
+      {
+        heading: "Show confidence, hide provenance",
+        body: "I made a deliberate choice not to show the user which tier made a call.\n\nA high-confidence result from the classifier and one from the LLM look identical. The only visible difference is time: an escalated layer shows a spinner on its annotation for about four seconds while the LLM works.\n\nDesigners don't care which model decided. They care how sure the system is about what it's recommending. The architecture is our problem. The certainty is theirs.",
+      },
+      {
+        heading: "Three kinds of not knowing",
+        body: "Most products have a single “low confidence” state. I found three, and each needs a different response.\n\nAmbiguity: several answers are plausible. The LLM proposes a few possible fixes and their probabilities are close together. Guessing would be a coin flip, so the system asks the designer to confirm the role.\n\nDoubt: one answer leads, but it isn't trustworthy. The top candidate clearly wins, but the model's calibrated accuracy on cases like this is poor. The system still makes the recommendation, with a low-confidence pill.\n\nUnknown: nothing is credible. No candidate role clears a minimum confidence threshold. The system shows Role could not be determined and lets the designer assign the role manually.\n\nAcross all of these, the copy is suggestive, never declarative: this role may be breached. The system never pretends to be more certain than it is.",
+      },
+      {
+        heading: "The designer's answer becomes the precedent",
+        body: "When a designer confirms or assigns a role, that decision sets a precedent for the rest of the document. They answer once, not on every page.\n\nThose answers also become training data. Every confirmation and every manual assignment teaches the classifier, so the cheap tier gets better at the cases that used to need the expensive one.\n\nWithholding gets easier the more users correct it.",
+      },
+      {
+        heading: "The numbers, honestly",
+        body: "BTF sits between beta and global rollout, so these are early:\n\n- About 32% of layers escalate to the LLM. That's high, and it's the honest cost of how ambiguous real typography is before the classifier has learned from a wide user base. Our target after rollout is 11–12%, driven by the feedback loop above.\n- About 4 seconds of latency on an escalated layer.\n- 3–4% of escalated layers end as “role could not be determined”. That's roughly one layer in a hundred overall. The system truly gives up rarely.",
+      },
+      {
+        heading: "The open risk",
+        body: "There's a gap, and I'd rather name it than hide it.\n\nWhen the LLM decides a role is being used correctly, like the chapter number, the frame is never annotated. That call isn't recorded anywhere: not on the canvas, not in the document's typography status, not in the admin view.\n\nIn effect, the LLM chose the guideline's intent over its letter, and nobody can see that it did. A quiet canvas is the goal. A quiet audit trail is a risk. On a project where an admin trusts the document status, a cleared call that was actually wrong would be invisible.\n\nThe fix is clear in principle: quiet on the canvas, visible in the audit. Context-cleared calls should be logged where reviewers can find them, even if the designer never sees them. We haven't built it yet.",
+      },
+      {
+        heading: "The principle",
+        body: "Design the escalation, not just the model:\n\n1. Hold back the expensive model until ambiguity earns it.\n2. Let context grow with ambiguity: measure first, read only when measuring fails.\n3. Show users confidence, not provenance.\n4. Treat ambiguity, doubt and the unknown as different states with different responses.\n5. Turn the user's answers into precedent and training data, so the system needs to ask less over time.\n6. Never let a silent decision be an untraceable one.",
+      },
+    ],
   },
   {
     slug: "earning-the-right-to-suggest",
