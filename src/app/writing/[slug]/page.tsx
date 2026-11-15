@@ -51,9 +51,16 @@ export default async function WritingPostPage({
         <div className="flex flex-col gap-4">
           <Divider />
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
-              {post.topic}
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {post.company ? (
+                <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
+                  {post.company}
+                </span>
+              ) : null}
+              <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
+                {post.topic}
+              </span>
+            </div>
             <p className="text-sm text-foreground-tertiary">{formatDate(post.publishedAt)}</p>
           </div>
           <Divider />
