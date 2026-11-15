@@ -9,7 +9,7 @@ export const writingPosts: WritingPost[] = [
     sections: [
       {
         heading: "The claim",
-        body: "Most agentic products are designed to get it right the first time. Accuracy is the metric, and every mistake is treated as a failure to minimise.\n\nThat's the wrong target. Agents will be wrong, and often they'll be wrong because the user was right to break the rule. An agentic product's real quality is how cheaply it recovers when it's wrong.\n\nI learned this building Brand Type Fidelity (BTF), an Adobe plugin where an agent checks every text layer against a company's typography guidelines and flags breaches in real time.",
+        body: "Most agentic products are designed to get it right the first time. Accuracy is the metric, and every mistake is treated as a failure to minimise.\n\nThat's the wrong target. Agents will be wrong, and often they'll be wrong because the user was right to break the rule. An agentic product's real quality is how cheaply it recovers when it's wrong.\n\nI learned this building Brand Type Fidelity (BTF), a realtime type guidelines breach detection feature in our Adobe plugin where an agent checks every text layer against a company's typography guidelines and flags breaches in real time.",
       },
       {
         heading: "The designer who broke the rule on purpose",
