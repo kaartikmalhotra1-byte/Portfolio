@@ -54,9 +54,24 @@ export default async function WritingPostPage({
 
         <Divider />
 
-        <p className="max-w-2xl text-base text-foreground-secondary">
-          This piece isn&apos;t published yet. Check back soon.
-        </p>
+        {post.sections.length > 0 ? (
+          <div className="flex max-w-2xl flex-col gap-10">
+            {post.sections.map((section, i) => (
+              <div key={i} className="flex flex-col gap-3">
+                {section.heading ? (
+                  <h2 className="text-[19px] font-semibold text-foreground">{section.heading}</h2>
+                ) : null}
+                {section.body ? (
+                  <p className="whitespace-pre-line text-base text-foreground-secondary">{section.body}</p>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="max-w-2xl text-base text-foreground-secondary">
+            This piece isn&apos;t published yet. Check back soon.
+          </p>
+        )}
 
         <Divider />
 
