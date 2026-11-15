@@ -4,4 +4,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"help-shouldnt-depend-on-your-phone-battery","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"writing","h":96,"c":"$Q2"}]]
-0:{"b":"82SAioVaHqH4r8TR2lIyF","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"R8kEMuMzfRdeSFcXKhOTR","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
