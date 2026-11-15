@@ -50,7 +50,10 @@ export default function WritingPage() {
                     className="size-4 shrink-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   />
                 </p>
-                <p className="text-sm text-foreground-tertiary">{post.topic}</p>
+                <p className="text-sm text-foreground-tertiary">
+                  {post.company ? `${post.company} · ` : ""}
+                  {post.topic}
+                </p>
               </div>
             </Link>
           ))}

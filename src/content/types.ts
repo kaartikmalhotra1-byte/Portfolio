@@ -33,6 +33,7 @@ export type WritingPost = {
   title: string;
   subheading?: string;
   topic: string;
+  company?: string;
   publishedAt: string;
   cover?: MediaItem;
   sections: ContentSection[];

@@ -4,6 +4,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "agentic-experiences-designed-around-correcting",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "Agentic experiences that are designed around correcting.",
     subheading: "What a 10x drop cap taught us about building agentic products that recover well.",
     topic: "HAI",
@@ -45,6 +46,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "withholding-the-model",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "Withholding the model: confidence-tiered escalation as a design decision.",
     subheading: "Confidence-tiered escalation as a design decision, not just an architecture.",
     topic: "HAI",
@@ -89,6 +91,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "earning-the-right-to-suggest",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "Earning the right to suggest: Autonomy as a ladder.",
     topic: "HAI",
     sections: [],
@@ -96,6 +99,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "the-loop-layer",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "The loop layer: IML as a compounding surface.",
     topic: "HAI",
     sections: [],
@@ -103,6 +107,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "making-acting-cheaper-than-ignoring",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "Making acting cheaper than ignoring.",
     topic: "HAI",
     sections: [],
@@ -110,6 +115,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "ai-belongs-in-the-canvas",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "AI belongs in the canvas, not in a chat destination.",
     topic: "HAI",
     sections: [],
@@ -117,6 +123,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "mocks-lie",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "Mocks lie: You can't design an AI feature in Figma.",
     topic: "PROTOTYPING",
     sections: [],
@@ -124,6 +131,7 @@ export const writingPosts: WritingPost[] = [
   {
     slug: "the-best-input-field",
     publishedAt: "2026-11-14",
+    company: "Monotype",
     title: "The best input field is the one you delete.",
     topic: "UX",
     sections: [],
