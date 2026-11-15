@@ -44,8 +44,11 @@ export default async function CaseStudyPage({
           </p>
           <h1 className="mt-8 text-[28px] font-semibold text-foreground">{cs.title}</h1>
           <p className="mt-2 max-w-2xl text-base text-foreground-secondary">{cs.tagline}</p>
+        </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-col gap-4">
+          <Divider />
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full border border-border px-3 py-1 text-sm text-foreground">
                 {cs.company}
@@ -56,9 +59,8 @@ export default async function CaseStudyPage({
             </div>
             <p className="text-sm text-foreground-tertiary">{formatDate(cs.publishedAt)}</p>
           </div>
+          <Divider />
         </div>
-
-        <Divider />
 
         <p className="max-w-2xl text-base text-foreground-secondary">
           The full write-up for this project — process, decisions, and outcome — isn&apos;t
