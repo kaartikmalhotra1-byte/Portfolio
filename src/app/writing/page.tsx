@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { NavRow } from "@/components/NavRow";
 import { Divider } from "@/components/Divider";
 import { PageFooter } from "@/components/PageFooter";
+import { Button } from "@/components/Button";
 import { writingPosts } from "@/content/writing";
 import { asset } from "@/lib/asset";
 
@@ -55,6 +56,14 @@ export default function WritingPage() {
             </Link>
           ))}
         </div>
+
+        <Link
+          href="/about"
+          className="mx-auto w-fit animate-expressive-fade-slow"
+          style={{ "--stagger": "110ms" } as React.CSSProperties}
+        >
+          <Button label="Read about" variant="primary" />
+        </Link>
 
         <Divider />
 
