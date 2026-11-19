@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { NavRow } from "@/components/NavRow";
 import { Divider } from "@/components/Divider";
 import { PageFooter } from "@/components/PageFooter";
 import { CaseStudyGridCard } from "@/components/CaseStudyGridCard";
+import { Button } from "@/components/Button";
 import { recentWork, earlierWork } from "@/content/case-studies";
 
 export const metadata: Metadata = {
@@ -65,6 +67,14 @@ export default function CaseStudiesPage() {
             ))}
           </div>
         </div>
+
+        <Link
+          href="/writing"
+          className="mx-auto w-fit animate-expressive-fade-slow"
+          style={{ "--stagger": "240ms" } as React.CSSProperties}
+        >
+          <Button label="Read all writings" variant="primary" />
+        </Link>
 
         <Divider />
 
