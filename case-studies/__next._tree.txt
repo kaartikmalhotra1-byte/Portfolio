@@ -10,7 +10,8 @@
 :HL["/Portfolio/images/bg-mint.png","image"]
 :HL["/Portfolio/images/mock-spinny-pay.png","image"]
 :HL["/Portfolio/images/mock-spinny-pro.png","image"]
+:HL["/Portfolio/images/arrow-white.svg","image"]
 :HL["/Portfolio/images/mock-spinny-help.png","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"case-studies","h":96,"c":"$Q2"}]]
-0:{"b":"-PYLbuhvAzPT4l8_MTRfX","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"DIYppLRzPbHo8hvIA4G3I","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
